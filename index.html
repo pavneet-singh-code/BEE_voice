@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiyazBuddy | Your Digital Vocal Companion</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-[#050508] text-white selection:bg-indigo-500 selection:text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-header border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- LOGO WITH RESTORED GLOW -->
+            <div class="flex items-center gap-3 group cursor-pointer"
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <div class="relative">
+                    <div
+                        class="absolute -inset-2 bg-indigo-600 rounded-full blur-md opacity-40 group-hover:opacity-100 group-hover:blur-lg transition-all duration-500">
+                    </div>
+                    <div
+                        class="relative w-10 h-10 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-full flex items-center justify-center border border-white/20">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <span class="text-2xl font-bold tracking-tighter italic">RiyazBuddy</span>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-10">
+                <button data-target="#features"
+                    class="nav-link text-sm font-medium text-slate-400 hover:text-white transition">Features</button>
+                <button data-target="#impact"
+                    class="nav-link text-sm font-medium text-slate-400 hover:text-white transition">Accuracy</button>
+                <a href="home.html"
+                    class="bg-indigo-600 text-white px-7 py-2.5 rounded-full text-sm font-bold hover:bg-white hover:text-black transition-all duration-300 shadow-lg shadow-indigo-500/20">
+                    Open Studio
+                </a>
+            </div>
+
+            <button id="menuBtn" class="md:hidden p-2 text-slate-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menuIcon" d="M4 6h16M4 12h16M4 18h16" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#0a0a0f] border-b border-white/10 p-6 flex flex-col space-y-4">
+            <button data-target="#features" class="nav-link text-left font-medium text-slate-400">Features</button>
+            <button data-target="#impact" class="nav-link text-left font-medium text-slate-400">Accuracy &
+                Impact</button>
+            <a href="home.html" class="bg-indigo-600 text-white text-center py-4 rounded-xl font-bold">Start
+                Practice</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+
+        <!-- MASSIVE BACKGROUND SOUND BARS (Integrated as Header Background) -->
+        <div class="absolute inset-0 flex items-center justify-center gap-3 md:gap-6 opacity-20 pointer-events-none">
+            <div class="vocal-bar h-64 w-4 md:w-10 bg-indigo-500"></div>
+            <div class="vocal-bar h-96 w-4 md:w-10 bg-purple-500"></div>
+            <div class="vocal-bar h-[30rem] w-4 md:w-10 bg-indigo-400"></div>
+            <div class="vocal-bar h-[45rem] w-4 md:w-10 bg-purple-600"></div>
+            <div class="vocal-bar h-[35rem] w-4 md:w-10 bg-indigo-500"></div>
+            <div class="vocal-bar h-[50rem] w-4 md:w-10 bg-purple-400"></div>
+            <div class="vocal-bar h-[40rem] w-4 md:w-10 bg-indigo-600"></div>
+            <div class="vocal-bar h-80 w-4 md:w-10 bg-purple-500"></div>
+            <div class="vocal-bar h-64 w-4 md:w-10 bg-indigo-400"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-8 animate-pulse">
+                <span class="text-xs font-bold tracking-widest text-indigo-300 uppercase italic">The Singer's First
+                    Choice</span>
+            </div>
+
+            <h1 class="text-6xl md:text-[110px] font-extrabold tracking-tighter mb-8 leading-none">
+                Master Your <br> <span class="music-gradient">Riyaz.</span>
+            </h1>
+
+            <p class="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">
+                The most accurate vocal pitch detector and Tanpura companion ever built for the web. Experience
+                professional studio precision in your browser.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="home.html"
+                    class="px-12 py-6 bg-white text-black rounded-2xl font-extrabold text-xl hover:bg-indigo-600 hover:text-white transition-all shadow-[0_0_40px_rgba(99,102,241,0.3)] group relative overflow-hidden">
+                    <span class="relative z-10">Enter Riyaz Studio →</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-32 bg-[#08080c] relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-6">Designed for <br><span class="text-indigo-500">Vocal
+                            Excellence.</span></h2>
+                    <p class="text-slate-400 text-lg">Stop guessing your pitch. Start seeing it.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="music-card group">
+                    <div
+                        class="w-16 h-16 bg-indigo-600/10 rounded-2xl flex items-center justify-center mb-8 border border-indigo-500/20 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Precision Tanpura</h3>
+                    <p class="text-slate-500 leading-relaxed">Studio-grade samples that resonate with the richness of
+                        actual wooden Tanpuras.</p>
+                </div>
+
+                <div class="music-card group">
+                    <div
+                        class="w-16 h-16 bg-purple-600/10 rounded-2xl flex items-center justify-center mb-8 border border-purple-500/20 group-hover:bg-purple-600 group-hover:text-white transition-all duration-500">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Live Frequency Graph</h3>
+                    <p class="text-slate-500 leading-relaxed">Catch even the slightest drift in your Sa, Ma, or Pa with
+                        our high-resolution visualizer.</p>
+                </div>
+
+                <div class="music-card group">
+                    <div
+                        class="w-16 h-16 bg-indigo-600/10 rounded-2xl flex items-center justify-center mb-8 border border-indigo-500/20 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Instant Response</h3>
+                    <p class="text-slate-500 leading-relaxed">Built with low-latency Web Audio API. Zero delay between
+                        your voice and the feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="stat-card">
+                    <span class="text-indigo-500 font-bold uppercase tracking-widest text-xs mb-4 block">Engine
+                        Reliability</span>
+                    <div class="text-6xl font-black mb-4">99.9%</div>
+                    <h4 class="text-xl font-bold mb-3">Pitch Accuracy</h4>
+                    <p class="text-slate-500 text-sm">We use Auto-Correlation and FFT algorithms to ensure your pitch is
+                        detected down to the cent.</p>
+                </div>
+
+                <div class="stat-card border-indigo-500/30 bg-indigo-500/5">
+                    <span class="text-indigo-500 font-bold uppercase tracking-widest text-xs mb-4 block">Global
+                        Reach</span>
+                    <div class="text-6xl font-black mb-4">50k+</div>
+                    <h4 class="text-xl font-bold mb-3">Musicians Helped</h4>
+                    <p class="text-slate-500 text-sm">From classical maestros to budding pop stars, RiyazBuddy is the
+                        daily companion for thousands.</p>
+                </div>
+
+                <div class="stat-card">
+                    <span class="text-indigo-500 font-bold uppercase tracking-widest text-xs mb-4 block">Usage
+                        Data</span>
+                    <div class="text-6xl font-black mb-4">250k+</div>
+                    <h4 class="text-xl font-bold mb-3">Monthly Visits</h4>
+                    <p class="text-slate-500 text-sm">Our community is growing rapidly, with over a quarter-million
+                        sessions every single month.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#030305] border-t border-white/5 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+                <div class="max-w-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center font-bold">R</div>
+                        <span class="text-2xl font-bold italic">RiyazBuddy</span>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                        Bringing ancient wisdom and modern technology together to help you find your true voice. No
+                        logins, no tracking, just music.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-16">
+                    <div>
+                        <h5 class="font-bold mb-6 text-white">Quick Links</h5>
+                        <ul class="space-y-4 text-slate-500 text-sm">
+                            <li><button data-target="#features"
+                                    class="nav-link hover:text-indigo-500 transition">Features</button></li>
+                            <li><button data-target="#impact"
+                                    class="nav-link hover:text-indigo-500 transition">Accuracy</button></li>
+                            <li><a href="home.html" class="hover:text-indigo-500 transition">Enter Studio</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-bold mb-6 text-white">Community</h5>
+                        <ul class="space-y-4 text-slate-500 text-sm">
+                            <li><a href="#" class="hover:text-indigo-500 transition">Feedback</a></li>
+                            <li><a href="#" class="hover:text-indigo-500 transition">Twitter</a></li>
+                            <li><a href="#" class="hover:text-indigo-500 transition">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:row justify-between items-center">
+                <p class="text-slate-600 text-xs tracking-widest uppercase font-bold">&copy; 2024 RiyazBuddy. Designed
+                    for the soul.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
