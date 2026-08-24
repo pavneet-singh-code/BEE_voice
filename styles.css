@@ -1,0 +1,125 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #050508;
+}
+
+.music-gradient {
+    background: linear-gradient(to right, #818cf8, #c084fc, #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+/* Restored Glowing Logo / Dot */
+.listening-dot {
+    width: 12px;
+    height: 12px;
+    background: #6366f1;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #6366f1;
+}
+
+.listening-dot.active {
+    animation: pulse-glow 1s infinite alternate;
+}
+
+@keyframes pulse-glow {
+    from {
+        box-shadow: 0 0 5px #6366f1;
+        transform: scale(1);
+    }
+
+    to {
+        box-shadow: 0 0 25px #6366f1;
+        transform: scale(1.2);
+    }
+}
+
+/* Swar Buttons */
+.swar-button {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.swar-button.active {
+    background: #6366f1;
+    color: white;
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.swar-button small {
+    font-size: 8px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-top: 4px;
+}
+
+/* Background Animation */
+.vocal-bar {
+    border-radius: 99px;
+    animation: wave 3s infinite ease-in-out alternate;
+}
+
+@keyframes wave {
+    from {
+        transform: scaleY(0.8);
+        opacity: 0.02;
+    }
+
+    to {
+        transform: scaleY(1.1);
+        opacity: 0.05;
+    }
+}
+
+.animate-spin-slow {
+    animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#meterNeedle {
+    transition: transform 0.15s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    will-change: transform;
+}
+
+.listening-dot.active {
+    animation: pulse-glow 1s infinite alternate;
+    background-color: #6366f1;
+    /* Indigo when starting */
+}
+
+@keyframes pulse-glow {
+    from {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+        box-shadow: 0 0 20px #6366f1;
+    }
+}
